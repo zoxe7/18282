@@ -1,25 +1,25 @@
-// 1. Изменение текста
+// 1
 document.getElementById('title').textContent = 'Добро пожаловать!';
 
-// 2. Подсчёт элементов
+// 2
 const paragraphs = document.querySelectorAll('p');
 alert('Количество параграфов: ' + paragraphs.length);
 
-// 3. Изменение атрибутов
+// 3
 const link = document.querySelector('a');
 link.href = 'https://google.com';
 link.target = '_blank';
 
-// 4. Стилизация
+// 4
 const firstParagraph = document.querySelector('p');
 firstParagraph.style.color = 'red';
 firstParagraph.style.fontSize = '20px';
 
-// 5. Изменение картинки
+// 5
 const image = document.querySelector('img');
-image.src = 'https://via.placeholder.com/150'; // Замените на URL другой картинки
+image.src = 'https://via.placeholder.com/150';
 
-// 6. Генерация списка
+// 6
 const ul = document.querySelector('ul');
 for (let i = 1; i <= 5; i++) {
   const li = document.createElement('li');
@@ -27,8 +27,8 @@ for (let i = 1; i <= 5; i++) {
   ul.appendChild(li);
 }
 
-// 7. Удаление элемента
-const removeButton = document.querySelector('.remove-button'); // Добавьте класс кнопке в HTML
+// 7
+const removeButton = document.querySelector('.remove-button');
 removeButton.addEventListener('click', () => {
   const list = document.querySelector('ul');
   if (list.children.length > 0) {
@@ -36,84 +36,8 @@ removeButton.addEventListener('click', () => {
   }
 });
 
-// 8. Случайный фон
-const changeBackgroundButton = document.querySelector('.change-background-button'); // Добавьте класс кнопке в HTML
+// 8
+const changeBackgroundButton = document.querySelector('.change-background-button');
 changeBackgroundButton.addEventListener('click', () => {
   document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
 });
-
-// 9. Ввод и вывод текста
-const input = document.querySelector('input');
-const showTextButton = document.querySelector('.show-text-button'); // Добавьте класс кнопке в HTML
-const outputParagraph = document.querySelector('.output-paragraph'); // Добавьте класс параграфу в HTML
-
-showTextButton.addEventListener('click', () => {
-  outputParagraph.textContent = input.value;
-});
-
-// 10. Скрыть/Показать текст
-const toggleButton = document.querySelector('.toggle-button'); // Добавьте класс кнопке в HTML
-const textBlock = document.querySelector('.text-block'); // Добавьте класс блоку в HTML
-
-toggleButton.addEventListener('click', () => {
-  if (textBlock.style.display === 'none') {
-    textBlock.style.display = 'block';
-  } else {
-    textBlock.style.display = 'none';
-  }
-});
-
-// 11. Счётчик
-const countSpan = document.getElementById('count');
-const incrementButton = document.querySelector('.increment-button'); // Добавьте класс кнопке в HTML
-const decrementButton = document.querySelector('.decrement-button'); // Добавьте класс кнопке в HTML
-
-let count = 0;
-
-incrementButton.addEventListener('click', () => {
-  count++;
-  countSpan.textContent = count;
-});
-
-decrementButton.addEventListener('click', () => {
-  count--;
-  countSpan.textContent = count;
-});
-
-// 12. ToDo-лист
-const todoInput = document.querySelector('.todo-input'); // Добавьте класс полю ввода в HTML
-const addTodoButton = document.querySelector('.add-todo-button'); // Добавьте класс кнопке в HTML
-const todoList = document.querySelector('.todo-list'); // Добавьте класс списку в HTML
-
-addTodoButton.addEventListener('click', () => {
-  const li = document.createElement('li');
-  li.textContent = todoInput.value;
-  todoList.appendChild(li);
-  todoInput.value = '';
-});
-
-// 13. Переключение темы
-const themeButton = document.querySelector('.theme-button'); // Добавьте класс кнопке в HTML
-
-themeButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-});
-
-// 14. Часы
-const timeDiv = document.getElementById('time');
-
-setInterval(() => {
-  timeDiv.textContent = new Date().toLocaleTimeString();
-}, 1000);
-
-// 15. Генератор цитат
-const quoteButton = document.querySelector('.quote-button'); // Добавьте класс кнопке в HTML
-const quoteParagraph = document.querySelector('.quote-paragraph'); // Добавьте класс параграфу в HTML
-
-const quotes = [
-  'Будь собой, остальные роли уже заняты.',
-  'Не бойтесь делать ошибки, бойтесь не делать ничего.',
-  'Жизнь — это то, что происходит с тобой, пока ты строишь планы.',
-];
-
-quoteButton.addEventListener('click', () => {
